@@ -4,4 +4,4 @@ COPY docker-entrypoint.sh /opt
 
 WORKDIR /opt/keycloak
 
-ENTRYPOINT [ "/opt/docker-entrypoint.sh" ]
+RUN ./bin/kc.sh
