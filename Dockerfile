@@ -4,4 +4,4 @@ COPY docker-entrypoint.sh /opt
 
 WORKDIR /opt/keycloak
 
-RUN ./bin/kc.sh start  --db=postgres
+RUN ./bin/kc.sh start
