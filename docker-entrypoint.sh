@@ -90,5 +90,6 @@ while [ "$#" -gt 0 ]; do
 done
 echo $CONFIG_ARGS
 echo $SERVER_OPTS
+exec /opt/keycloak/bin/kc.sh start  $SERVER_OPTS $CONFIG_ARGS
 
 exit $?
