@@ -4,4 +4,4 @@ COPY docker-entrypoint.sh /opt
 
 WORKDIR /opt
 
-CMD ["docker-entrypoint.sh"]
+ENTRYPOINT ["docker-entrypoint.sh"]
