@@ -61,7 +61,7 @@ fi
 CONFIG_ARGS=""
 RUN_CONFIG_START=false
 RUN_CONFIG=false
-SERVER_OPTS="--http-port=$PORT --proxy=edge --cluster=local"
+SERVER_OPTS="--http-port=$PORT --proxy=edge  --hostname=kc-cob-"
 
 if [ "$DB_ARGS" != "" ]; then
   SERVER_OPTS="$SERVER_OPTS $DB_ARGS"
@@ -88,8 +88,8 @@ while [ "$#" -gt 0 ]; do
   esac
   shift
 done
-echo $CONFIG_ARGS
-echo $SERVER_OPTS
+echo 'CONFIG_ARGS '+ $CONFIG_ARGS
+echo '$SERVER_OPTS '+ $SERVER_OPTS
 exec /opt/keycloak/bin/kc.sh start  $SERVER_OPTS $CONFIG_ARGS
 
 exit $?
