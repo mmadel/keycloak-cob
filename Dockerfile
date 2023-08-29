@@ -3,4 +3,4 @@ WORKDIR /tmp
 COPY docker-entrypoint.sh test.sh
 
 ENTRYPOINT ["/tmp/test.sh"]
-ENTRYPOINT ["ls"]
+ENTRYPOINT ["sh", "-c","ls"]
