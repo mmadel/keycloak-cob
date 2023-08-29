@@ -2,6 +2,6 @@ FROM quay.io/keycloak/keycloak:18.0.0
 
 COPY docker-entrypoint.sh /opt
 
-WORKDIR /opt/keycloak
+WORKDIR /opt
 
-RUN ./opt/docker-entrypoint.sh
+CMD ["docker-entrypoint.sh"]
