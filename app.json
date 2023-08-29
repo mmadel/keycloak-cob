@@ -1,0 +1,38 @@
+{
+  "name": "Keycloak COB Deployment to Heroku",
+  "description": "Deployment of the Keycloak COB Identity and Access Management Solution to Heroku using a slightly adapted version of the official Docker container image",
+  "keywords": [
+    "identity",
+    "oauth",
+    "saml",
+    "keycloak",
+    "keycloak.x",
+    "heroku",
+    "quarkus"
+  ],
+  "stack": "container",
+  "repository": "https://github.com/mmadel/keycloak-cob",
+  "logo": "https://design.jboss.org/keycloak/logo/images/keycloak_icon_128px.png",
+  "success_url": "/",
+  "env": {
+    "KEYCLOAK_ADMIN": {
+      "description": "Admin user name",
+      "value": "admin"
+    },
+    "KEYCLOAK_ADMIN_PASSWORD": {
+      "description": "Admin password",
+      "value": "Cob@10"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql:mini"
+    }
+  ]
+}
