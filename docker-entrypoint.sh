@@ -88,8 +88,8 @@ while [ "$#" -gt 0 ]; do
   esac
   shift
 done
-echo 'CONFIG_ARGS '+ $CONFIG_ARGS
-echo '$SERVER_OPTS '+ $SERVER_OPTS
+echo $CONFIG_ARGS
+echo $SERVER_OPTS
 exec /opt/keycloak/bin/kc.sh start  $SERVER_OPTS $CONFIG_ARGS
 
 exit $?
