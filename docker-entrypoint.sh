@@ -75,7 +75,7 @@ while [ "$#" -gt 0 ]; do
   config)
     RUN_CONFIG=true
     ;;
-  /opt/jboss/tools/docker-entrypoint.sh)
+  /opt/tools/docker-entrypoint.sh)
     echo "Ignoring redundant entrypoint argument"
     ;;
   *)
@@ -95,17 +95,17 @@ if [[ "$RUN_CONFIG_START" == true ]]; then
     exit 2
   fi
 
-  CONFIG_MARKER_FILE="/opt/jboss/keycloak/config_marker"
+  CONFIG_MARKER_FILE="/opt/keycloak/config_marker"
 
   if [[ -n $CONFIG_ARGS && ! -f "$CONFIG_MARKER_FILE" ]]; then
-    exec /opt/jboss/keycloak/bin/kc.sh config $CONFIG_ARGS &
+    exec /opt/keycloak/bin/kc.sh config $CONFIG_ARGS &
     wait $!
     touch $CONFIG_MARKER_FILE
   fi
 
-  exec /opt/jboss/keycloak/bin/kc.sh $SERVER_OPTS
+  exec /opt/keycloak/bin/kc.sh $SERVER_OPTS
 else
-  exec /opt/jboss/keycloak/bin/kc.sh $SERVER_OPTS $CONFIG_ARGS
+  exec /opt/keycloak/bin/kc.sh $SERVER_OPTS $CONFIG_ARGS
 fi
 
 exit $?
