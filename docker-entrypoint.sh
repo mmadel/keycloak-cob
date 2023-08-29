@@ -89,23 +89,6 @@ while [ "$#" -gt 0 ]; do
   shift
 done
 
-if [[ "$RUN_CONFIG_START" == true ]]; then
-  if [[ "$RUN_CONFIG" == true ]]; then
-    echo "ERROR: You can not run 'config' when passing the '--auto-config' start option.Please, choose one or another."
-    exit 2
-  fi
-
-  CONFIG_MARKER_FILE="/opt/keycloak/config_marker"
-
-  if [[ -n $CONFIG_ARGS && ! -f "$CONFIG_MARKER_FILE" ]]; then
-    exec /opt/keycloak/bin/kc.sh config $CONFIG_ARGS &
-    wait $!
-    touch $CONFIG_MARKER_FILE
-  fi
-
-  exec /opt/keycloak/bin/kc.sh $SERVER_OPTS
-else
-  exec /opt/keycloak/bin/kc.sh $SERVER_OPTS $CONFIG_ARGS
-fi
+exec /opt/keycloak/bin/kc.sh $SERVER_OPTS $CONFIG_ARGS
 
 exit $?
