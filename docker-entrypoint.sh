@@ -52,7 +52,7 @@ if [ "$DATABASE_URL" != "" ]; then
     KC_DB=mariadb
     export KEYCLOAK_ADMIN=admin
     export KEYCLOAK_ADMIN_PASSWORD=admin
-    export KC_DB_URL='jdbc:mysql://'$DB_ADDR'/'$DB_DATABASE
+    export KC_DB_URL='mysql://'$DB_ADDR'/'$DB_DATABASE
     export KC_DB_USERNAME=$DB_USER
     export KC_DB_PASSWORD=$DB_PASSWORD
   fi
