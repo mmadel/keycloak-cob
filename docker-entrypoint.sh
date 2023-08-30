@@ -49,15 +49,15 @@ if [ "$DATABASE_URL" != "" ]; then
     DB_PASSWORD=${BASH_REMATCH[2]}
 
     echo "DB_ADDR=$DB_ADDR, DB_PORT=$DB_PORT, DB_DATABASE=$DB_DATABASE, DB_USER=$DB_USER, DB_PASSWORD=$DB_PASSWORD"
-    KC_DB=mariadb
+    KC_DB=mysql
     export KEYCLOAK_ADMIN=admin
     export KEYCLOAK_ADMIN_PASSWORD=admin
-    export KC_DB_URL=mysql://lg3egd9lnxz0gvfp:y5yy9iptjwwij1fn@q0h7yf5pynynaq54.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/vtti3mcbeekvyngz
+    export KC_DB_URL=mysql://$DB_ADDR/$DB_DATABASE
     export KC_DB_USERNAME=$DB_USER
     export KC_DB_PASSWORD=$DB_PASSWORD
   fi
 fi
-echo $KC_DB
+
 ##################
 # Start Keycloak #
 ##################

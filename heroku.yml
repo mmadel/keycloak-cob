@@ -1,6 +1,6 @@
 setup:
   addons:
-    - plan: jawsdb-maria:kitefin
+    - plan: cleardb:punch
       as: DATABASE
 build:
   docker:
