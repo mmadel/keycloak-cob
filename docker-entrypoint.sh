@@ -57,7 +57,7 @@ if [ "$DATABASE_URL" != "" ]; then
     export KC_DB_PASSWORD=$DB_PASSWORD
   fi
 fi
-
+echo $KC_DB_URL
 ##################
 # Start Keycloak #
 ##################
