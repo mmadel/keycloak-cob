@@ -55,6 +55,7 @@ if [ "$DATABASE_URL" != "" ]; then
 fi
 export KEYCLOAK_ADMIN=admin
 export KEYCLOAK_ADMIN_PASSWORD=coB@10
+export KC_HOSTNAME_ADMIN=kc-cob
 ##################
 # Start Keycloak #
 ##################
@@ -62,7 +63,7 @@ export KEYCLOAK_ADMIN_PASSWORD=coB@10
 CONFIG_ARGS=""
 RUN_CONFIG_START=false
 RUN_CONFIG=false
-SERVER_OPTS="--http-port=$PORT --proxy=edge  --hostname=kc-cob"
+SERVER_OPTS="--http-port=$PORT --proxy=edge"
 
 #if [ "$DB_ARGS" != "" ]; then
 #  SERVER_OPTS="$SERVER_OPTS $DB_ARGS"
