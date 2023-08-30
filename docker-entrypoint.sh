@@ -52,7 +52,7 @@ if [ "$DATABASE_URL" != "" ]; then
     export KEYCLOAK_ADMIN=admin
     export KEYCLOAK_ADMIN_PASSWORD=admin
     export KC_DB_SCHEMA=$DB_DATABASE
-    export KC_DB_URL='jdbc:mysql://'+$DB_ADDR
+    export KC_DB_URL='jdbc:mysql://'$DB_ADDR
     export KC_DB_USERNAME=$DB_USER
     export KC_DB_PASSWORD=$DB_PASSWORD
   fi
