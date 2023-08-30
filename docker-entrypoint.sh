@@ -52,7 +52,7 @@ if [ "$DATABASE_URL" != "" ]; then
     KC_DB=mysql
     export KEYCLOAK_ADMIN=admin
     export KEYCLOAK_ADMIN_PASSWORD=admin
-    export KC_DB_URL='mysql://'$DB_ADDR':'$DB_PORT'/'$DB_DATABASE
+    export KC_DB_URL='jdbc:mysql://'$DB_ADDR':'$DB_PORT'/'$DB_DATABASE
     export KC_DB_USERNAME=$DB_USER
     export KC_DB_PASSWORD=$DB_PASSWORD
   fi
@@ -94,6 +94,6 @@ while [ "$#" -gt 0 ]; do
 done
 echo $CONFIG_ARGS
 echo $SERVER_OPTS
-exec /opt/keycloak/bin/kc.sh start  $SERVER_OPTS
+exec /opt/keycloak/bin/kc.sh start  --auto-build   $SERVER_OPTS
 
 exit $?
