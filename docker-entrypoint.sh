@@ -63,7 +63,7 @@ export KEYCLOAK_ADMIN_PASSWORD=coB@10
 CONFIG_ARGS=""
 RUN_CONFIG_START=false
 RUN_CONFIG=false
-SERVER_OPTS="--http-port=$PORT --proxy=passthrough  --hostname=kc-cob"
+SERVER_OPTS="--http-port=$PORT --proxy=edge  --hostname=kc-cob"
 
 #if [ "$DB_ARGS" != "" ]; then
 #  SERVER_OPTS="$SERVER_OPTS $DB_ARGS"
