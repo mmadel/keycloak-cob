@@ -49,7 +49,7 @@ if [ "$DATABASE_URL" != "" ]; then
     DB_PASSWORD=${BASH_REMATCH[2]}
 
     echo "DB_ADDR=$DB_ADDR, DB_PORT=$DB_PORT, DB_DATABASE=$DB_DATABASE, DB_USER=$DB_USER, DB_PASSWORD=$DB_PASSWORD"
-    KC_DB=mysql
+    KC_DB=mariadb
     export KEYCLOAK_ADMIN=admin
     export KEYCLOAK_ADMIN_PASSWORD=admin
     export KC_DB_URL='jdbc:mysql://'$DB_ADDR'/'$DB_DATABASE
