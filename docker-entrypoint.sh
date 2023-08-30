@@ -92,6 +92,6 @@ while [ "$#" -gt 0 ]; do
 done
 echo $KEYCLOAK_ADMIN
 echo $KEYCLOAK_ADMIN_PASSWORD
-exec /opt/keycloak/bin/kc.sh start    $SERVER_OPTS
+exec /opt/keycloak/bin/kc.sh start   --hostname-strict=false --hostname-strict-https=false
 
 exit $?
