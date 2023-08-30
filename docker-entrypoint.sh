@@ -40,7 +40,7 @@ file_env 'KEYCLOAK_ADMIN_PASSWORD'
 if [ "$DATABASE_URL" != "" ]; then
   echo "Found database configuration in DATABASE_URL=$DATABASE_URL"
 
-  regex='^mysql://([a-zA-Z0-9_-]+):([a-zA-Z0-9]+)@([a-z0-9.-]+):([[:digit:]]+)/([a-zA-Z0-9_-]+)$'
+  regex='^mysql://([a-zA-Z0-9_-]+):([a-zA-Z0-9]+)@([a-z0-9.-]+)/([a-zA-Z0-9_-]+)$'
   if [[ $DATABASE_URL =~ $regex ]]; then
     DB_ADDR=${BASH_REMATCH[3]}
     DB_PORT=${BASH_REMATCH[4]}
@@ -57,7 +57,6 @@ if [ "$DATABASE_URL" != "" ]; then
     export KC_DB_PASSWORD=$DB_PASSWORD
   fi
 fi
-echo $KC_DB_URL
 ##################
 # Start Keycloak #
 ##################
