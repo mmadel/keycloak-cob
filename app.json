@@ -32,7 +32,7 @@
   },
   "addons": [
     {
-      "plan": "heroku-postgresql:mini"
+      "plan": "jawsdb-maria:kitefin"
     }
   ]
 }
