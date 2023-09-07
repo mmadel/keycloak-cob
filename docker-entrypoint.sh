@@ -91,7 +91,7 @@ while [ "$#" -gt 0 ]; do
   shift
 done
 echo $KEYCLOAK_ADMIN
-echo $KEYCLOAK_ADMIN_PASSWORD
+echo $KC_DB_URL
 exec /opt/keycloak/bin/kc.sh start --http-port=$PORT --proxy=edge   --hostname-strict=false --hostname-strict-https=false
 
 exit $?
