@@ -34,7 +34,7 @@ file_env() {
 
 
 ################################################
-# Set database config from Heroku DATABASE_URL #
+# Set database config from Heroku DATABASE_URL #ee
 ################################################
 if [ "$DATABASE_URL" != "" ]; then
   echo "Found database configuration in DATABASE_URL=$DATABASE_URL"
