@@ -48,10 +48,10 @@ if [ "$DATABASE_URL" != "" ]; then
     DB_PASSWORD=${BASH_REMATCH[2]}
 
     echo "DB_ADDR=$DB_ADDR, DB_DATABASE=$DB_DATABASE, DB_USER=$DB_USER, DB_PASSWORD=$DB_PASSWORD"
-    export KC_DB_URL=jdbc:mysql//$DB_ADDR/$DB_DATABASE
-    export KC_DB_USERNAME=$DB_USER
-    export KC_DB_PASSWORD=$DB_PASSWORD
-    export KC_DB=mysql
+#    export KC_DB_URL=jdbc:mysql//$DB_ADDR/$DB_DATABASE
+#    export KC_DB_USERNAME=$DB_USER
+#    export KC_DB_PASSWORD=$DB_PASSWORD
+#    export KC_DB=mysql
   fi
 fi
 export KEYCLOAK_ADMIN=admin
@@ -73,6 +73,6 @@ SERVER_OPTS="--http-port=$PORT --hostname-strict=false"
 echo $KEYCLOAK_ADMIN
 echo $KC_DB_URL
 echo $KC_DB
-exec /opt/keycloak/bin/kc.sh start --http-port=$PORT --proxy=edge   --hostname-strict=false --hostname-strict-https=false
+exec /opt/keycloak/bin/kc.sh start --http-port=$PORT --proxy=edge --hostname-strict=false --hostname-strict-https=false  --db-url-host us-cdbr-east-06.cleardb.net --db-username bc63a3c409994f --db-password 4eaca5e2
 
 exit $?
