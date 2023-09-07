@@ -42,8 +42,8 @@ if [ "$DATABASE_URL" != "" ]; then
   regex='^mysql://([a-zA-Z0-9_-]+):([a-zA-Z0-9]+)@([a-z0-9.-]+)/([a-zA-Z0-9_-]+)'
   if [[ $DATABASE_URL =~ $regex ]]; then
     DB_ADDR=${BASH_REMATCH[3]}
-    DB_PORT=${BASH_REMATCH[4]}
-    DB_DATABASE=${BASH_REMATCH[5]}
+
+    DB_DATABASE=${BASH_REMATCH[4]}
     DB_USER=${BASH_REMATCH[1]}
     DB_PASSWORD=${BASH_REMATCH[2]}
 
