@@ -69,27 +69,6 @@ SERVER_OPTS="--http-port=$PORT --hostname-strict=false"
 #  SERVER_OPTS="$SERVER_OPTS $DB_ARGS"
 #fi
 
-while [ "$#" -gt 0 ]; do
-  case "$1" in
-  --auto-config)
-    RUN_CONFIG_START=true
-    ;;
-  config)
-    RUN_CONFIG=true
-    ;;
-  /opt/tools/docker-entrypoint.sh)
-    echo "Ignoring redundant entrypoint argument"
-    ;;
-  *)
-    if [[ $1 == --* || ! $1 =~ ^-.* ]]; then
-      CONFIG_ARGS="$CONFIG_ARGS $1"
-    else
-      SERVER_OPTS="$SERVER_OPTS $1"
-    fi
-    ;;
-  esac
-  shift
-done
 echo $KEYCLOAK_ADMIN
 echo $KC_DB_URL
 exec /opt/keycloak/bin/kc.sh start --http-port=$PORT --proxy=edge   --hostname-strict=false --hostname-strict-https=false
