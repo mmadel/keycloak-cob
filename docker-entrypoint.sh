@@ -36,24 +36,24 @@ file_env() {
 ################################################
 # Set database config from Heroku DATABASE_URL #ee
 ################################################
-if [ "$DATABASE_URL" != "" ]; then
-  echo "Found database configuration in DATABASE_URL=$DATABASE_URL"
-
-  regex='^mysql://([a-zA-Z0-9_-]+):([a-zA-Z0-9]+)@([a-z0-9.-]+)/([a-zA-Z0-9_-]+)'
-  if [[ $DATABASE_URL =~ $regex ]]; then
-    DB_ADDR=${BASH_REMATCH[3]}
-
-    DB_DATABASE=${BASH_REMATCH[4]}
-    DB_USER=${BASH_REMATCH[1]}
-    DB_PASSWORD=${BASH_REMATCH[2]}
-
-    echo "DB_ADDR=$DB_ADDR, DB_DATABASE=$DB_DATABASE, DB_USER=$DB_USER, DB_PASSWORD=$DB_PASSWORD"
-#    export KC_DB_URL=jdbc:mysql//$DB_ADDR/$DB_DATABASE
-#    export KC_DB_USERNAME=$DB_USER
-#    export KC_DB_PASSWORD=$DB_PASSWORD
-#    export KC_DB=mysql
-  fi
-fi
+#if [ "$DATABASE_URL" != "" ]; then
+#  echo "Found database configuration in DATABASE_URL=$DATABASE_URL"
+#
+#  regex='^mysql://([a-zA-Z0-9_-]+):([a-zA-Z0-9]+)@([a-z0-9.-]+)/([a-zA-Z0-9_-]+)'
+#  if [[ $DATABASE_URL =~ $regex ]]; then
+#    DB_ADDR=${BASH_REMATCH[3]}
+#
+#    DB_DATABASE=${BASH_REMATCH[4]}
+#    DB_USER=${BASH_REMATCH[1]}
+#    DB_PASSWORD=${BASH_REMATCH[2]}
+#
+#    echo "DB_ADDR=$DB_ADDR, DB_DATABASE=$DB_DATABASE, DB_USER=$DB_USER, DB_PASSWORD=$DB_PASSWORD"
+##    export KC_DB_URL=jdbc:mysql//$DB_ADDR/$DB_DATABASE
+##    export KC_DB_USERNAME=$DB_USER
+##    export KC_DB_PASSWORD=$DB_PASSWORD
+##    export KC_DB=mysql
+#  fi
+#fi
 export KEYCLOAK_ADMIN=admin
 export KEYCLOAK_ADMIN_PASSWORD=coB@10
 
