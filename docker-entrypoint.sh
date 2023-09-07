@@ -71,8 +71,6 @@ SERVER_OPTS="--http-port=$PORT --hostname-strict=false"
 #fi
 
 echo $KEYCLOAK_ADMIN
-echo $KC_DB_URL
-echo $KC_DB
 exec /opt/keycloak/bin/kc.sh start --http-port=$PORT --proxy=edge --hostname-strict=false --hostname-strict-https=false  --db-url-host us-cdbr-east-06.cleardb.net --db-username bc63a3c409994f --db-password 4eaca5e2
 
 exit $?
