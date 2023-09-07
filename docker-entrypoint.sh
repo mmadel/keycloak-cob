@@ -71,6 +71,6 @@ SERVER_OPTS="--http-port=$PORT --hostname-strict=false"
 #fi
 
 echo $KEYCLOAK_ADMIN
-exec /opt/keycloak/bin/kc.sh start --http-port=$PORT --proxy=edge --hostname-strict=false --hostname-strict-https=false  --db-url-host us-cdbr-east-06.cleardb.net --db-username bc63a3c409994f --db-password 4eaca5e2
+exec /opt/keycloak/bin/kc.sh start --http-port=$PORT --auto-build --db=mariadb --proxy=edge --hostname-strict=false --hostname-strict-https=false --db-url jdbc:mysql://dcrhg4kh56j13bnu.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/wuna1541o83rihlc --db-username n5y21rupsu91iioz --db-password ih0qzvevf048ap4z
 
 exit $?
