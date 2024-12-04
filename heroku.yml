@@ -1,6 +1,6 @@
 setup:
   addons:
-    - plan: cleardb:punch
+    - plan: jawsdb:leopard
       as: DATABASE
 build:
   docker:
