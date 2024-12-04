@@ -57,7 +57,7 @@ file_env() {
 #fi
 export KEYCLOAK_ADMIN=admin
 export KEYCLOAK_ADMIN_PASSWORD=coB@10
-export KEYCLOAK_DB_SCHEMA=none
+export DB_SCHEMA=validate
 
 ##################
 # Start Keycloak #
