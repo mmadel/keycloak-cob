@@ -36,6 +36,7 @@ file_env() {
 ################################################
 # Set database config from Heroku DATABASE_URL #ee
 ################################################
+#https://regex101.com/r/uB8lA4/1
 #if [ "$DATABASE_URL" != "" ]; then
 #  echo "Found database configuration in DATABASE_URL=$DATABASE_URL"
 #
@@ -71,6 +72,6 @@ SERVER_OPTS="--http-port=$PORT --hostname-strict=false"
 #fi
 
 echo $KEYCLOAK_ADMIN
-exec /opt/keycloak/bin/kc.sh start --http-port=$PORT --auto-build --db=mysql --proxy=edge --hostname-strict=false --hostname-strict-https=false --db-url jdbc:mysql://us-cdbr-east-06.cleardb.net/heroku_9376008936760b2 --db-username b8a6261c2e7d78 --db-password 112444ab
+exec /opt/keycloak/bin/kc.sh start --http-port=$PORT --auto-build --db=mysql --proxy=edge --hostname-strict=false --hostname-strict-https=false --db-url jdbc:mysql://e764qqay0xlsc4cz.cbetxkdyhwsb.us-east-1.rds.amazonaws.com --db-username u5kgoxnux5tteor8 --db-password v3t0cv6dc1xx6oqh
 
 exit $?
