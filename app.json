@@ -32,7 +32,7 @@
   },
   "addons": [
     {
-      "plan": "jawsdb-encircled-34822"
+      "plan": "jawsdb-maria:leopard"
     }
   ]
 }
