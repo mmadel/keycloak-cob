@@ -57,7 +57,6 @@ file_env() {
 #fi
 export KEYCLOAK_ADMIN=admin
 export KEYCLOAK_ADMIN_PASSWORD=coB@10
-export DB_SCHEMA=validate
 
 ##################
 # Start Keycloak #
@@ -73,6 +72,6 @@ SERVER_OPTS="--http-port=$PORT --hostname-strict=false"
 #fi
 
 echo $KEYCLOAK_ADMIN
-exec /opt/keycloak/bin/kc.sh start  --db-schema=none --http-port=$PORT --auto-build --db=mysql --proxy=edge --hostname-strict=false --hostname-strict-https=false --db-url jdbc:mysql://e764qqay0xlsc4cz.cbetxkdyhwsb.us-east-1.rds.amazonaws.com/lpwqvwws4deq0fkh --db-username et2fpdsy5wlwvmzg --db-password gpfkpdy2u94k546c
+exec /opt/keycloak/bin/kc.sh start --http-port=$PORT --auto-build --db=mysql --proxy=edge --hostname-strict=false --hostname-strict-https=false --db-url jdbc:mysql://e764qqay0xlsc4cz.cbetxkdyhwsb.us-east-1.rds.amazonaws.com/lpwqvwws4deq0fkh --db-username et2fpdsy5wlwvmzg --db-password gpfkpdy2u94k546c
 
 exit $?
