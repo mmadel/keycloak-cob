@@ -73,6 +73,6 @@ SERVER_OPTS="--http-port=$PORT --hostname-strict=false"
 #fi
 
 echo $KEYCLOAK_ADMIN
-exec /opt/keycloak/bin/kc.sh start  --http-port=$PORT --auto-build --db=mysql --proxy=edge --hostname-strict=false --hostname-strict-https=false --db-url jdbc:mysql://ex3kqa.stackhero-network.com:7764/root --db-username root --db-password JmeuL6jJhw56IeQQAWaMP1MYuyicNsS3
+exec /opt/keycloak/bin/kc.sh start  --http-port=$PORT --auto-build --db=mysql --proxy=edge --hostname-strict=false --hostname-strict-https=false --db-url jdbc:mysql://jnpjvz.stackhero-network.com:5015/root --db-username root --db-password 9khv7k3WmDm9mEbLku4O2Ixiw7L81bTj
 
 exit $?
