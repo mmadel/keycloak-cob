@@ -1,3 +1,7 @@
+setup:
+  addons:
+    - plan: jawsdb:leopard
+      as: DATABASE
 build:
   docker:
     web: Dockerfile

@@ -29,5 +29,10 @@
       "quantity": 1,
       "size": "free"
     }
-  }
+  },
+  "addons": [
+    {
+      "plan": "jawsdb:leopard"
+    }
+  ]
 }
